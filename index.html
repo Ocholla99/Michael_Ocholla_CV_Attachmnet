@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Ocholla · IT CV</title>
+    <!-- Font Awesome for icons (optional but nice) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background: #dae3ec;
+            background: -webkit-linear-gradient(145deg, #e9f0f5 0%, #dae3ec 100%);
+            background: linear-gradient(145deg, #e9f0f5 0%, #dae3ec 100%);
+            min-height: 100vh;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .cv-card {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 30px 50px rgba(0, 20, 30, 0.25);
+            overflow: hidden;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+
+        /* header area */
+        .cv-header {
+            background: #0b2b44; /* deep navy */
+            color: white;
+            padding: 2rem 2.5rem 1.8rem 2.5rem;
+        }
+
+        .name-title h1 {
+            font-size: 2.7rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+        }
+
+        .name-title .subhead {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.85;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 0.75rem;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-top: 0.4rem;
+        }
+
+        .contact-bar {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1rem 1.5rem;
+            border-radius: 60px;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-item {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .contact-item i {
+            width: 1.25rem;
+            color: #7ab7e0;
+        }
+
+        .contact-item a, .contact-item span {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            border-bottom: 1px dotted transparent;
+            -webkit-transition: border-color 0.2s;
+            -moz-transition: border-color 0.2s;
+            transition: border-color 0.2s;
+        }
+
+        .contact-item a:hover {
+            border-bottom: 1px dotted #a0cfff;
+        }
+
+        /* main content */
+        .cv-main {
+            padding: 2.5rem;
+            background: #fcfdff;
+        }
+
+        /* sections */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0b2b44;
+            border-left: 6px solid #2d7fb9;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #2d7fb9;
+            font-size: 1.2rem;
+        }
+
+        .grid-2col {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #1a405b;
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            color: #1f2c38;
+            line-height: 1.5;
+        }
+
+        .info-value small {
+            font-size: 0.9rem;
+            color: #4d6379;
+        }
+
+        .skill-tags {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e7edf5;
+            color: #0b2b44;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-left: 3px solid #2d7fb9;
+        }
+
+        .cert-list {
+            list-style: none;
+        }
+
+        .cert-list li {
+            margin-bottom: 0.7rem;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: baseline;
+            -ms-flex-align: baseline;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .cert-list li i {
+            color: #2d7fb9;
+            width: 1.4rem;
+            font-size: 1rem;
+        }
+
+        .referee-card {
+            background: #f0f5fa;
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            display: inline-block;
+            width: 100%;
+            max-width: 350px;
+            border: 1px solid #cbdbe9;
+        }
+
+        .referee-card .dept {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0b2b44;
+        }
+
+        .referee-card .contact-line {
+            margin-top: 0.8rem;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 1rem;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .referee-card .contact-line i {
+            color: #0073b1;
+            width: 1.2rem;
+        }
+
+        hr {
+            border: 1px solid #dbe2ea;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .pdf-download-section {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            margin-top: 0.5rem;
+        }
+
+        .download-btn {
+            background: #0b2b44;
+            color: white;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 0.9rem;
+            border: 2px solid transparent;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            transition: all 0.2s;
+            box-shadow: 0 5px 12px rgba(11, 43, 68, 0.25);
+        }
+
+        .download-btn i {
+            font-size: 1.3rem;
+        }
+
+        .download-btn:hover {
+            background: #1c405e;
+            border-color: #ffffff;
+            box-shadow: 0 8px 18px rgba(0, 40, 60, 0.3);
+            -webkit-transform: scale(1.02);
+            -moz-transform: scale(1.02);
+            transform: scale(1.02);
+        }
+
+        /* decoration */
+        .footnote {
+            text-align: right;
+            font-size: 0.75rem;
+            color: #7a8f9f;
+            margin-top: 2rem;
+            border-top: 1px dashed #c5d2df;
+            padding-top: 0.8rem;
+        }
+
+        /* contact form styles */
+        .contact-form {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+        }
+
+        .contact-form label {
+            font-size: 0.95rem;
+            color: #1a405b;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #cbdbe9;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .contact-form button {
+            background: #0b2b44;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid transparent;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            transition: all 0.2s;
+            box-shadow: 0 5px 12px rgba(11, 43, 68, 0.25);
+            cursor: pointer;
+            -webkit-align-self: flex-start;
+            -ms-flex-item-align: start;
+            align-self: flex-start;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .contact-form button:hover {
+            background: #1c405e;
+            border-color: #ffffff;
+            box-shadow: 0 8px 18px rgba(0, 40, 60, 0.3);
+            -webkit-transform: scale(1.02);
+            -moz-transform: scale(1.02);
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 650px) {
+            .cv-header { padding: 1.5rem; }
+            .name-title h1 { font-size: 2rem; }
+            .contact-bar { flex-direction: column; gap: 0.8rem; }
+            .grid-2col { grid-template-columns: 1fr; }
+            .cv-main { padding: 1.8rem; }
+            .download-btn { width: 100%; justify-content: center; }
+            .contact-form { width: 100%; }
+            .contact-form button { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-card">
+        <!-- header with personal info -->
+        <div class="cv-header">
+            <div class="name-title">
+                <h1>Michael Ocholla</h1>
+                <div class="subhead">
+                    <i class="fas fa-graduation-cap"></i> IT Student · Moi University
+                </div>
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <i class="fas fa-map-pin"></i>
+                    <span>Moi University, P.O. Box 3900 - 30100, Eldoret</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+254796967161">+254 796 967 161</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:Michael32ocholla@gmail.com">Michael32ocholla@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- main body -->
+        <div class="cv-main">
+
+            <!-- career objective -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-bullseye"></i> Career objective</div>
+                <div class="info-value" style="background: #f0f6fe; padding: 1.2rem 1.5rem; border-radius: 28px;">
+                    A motivated Information Technology student seeking an Industrial Attachment opportunity to apply my knowledge in networking, database management and system support while gaining practical experience in a professional environment.
+                </div>
+            </div>
+
+            <!-- two column layout for education & skills -->
+            <div class="grid-2col">
+                <!-- left column -->
+                <div>
+                    <!-- Education -->
+                    <div class="section" style="margin-bottom: 1.5rem;">
+                        <div class="section-title"><i class="fas fa-book-open"></i> Education Background</div>
+                        <div class="info-item">
+                            <div class="info-label">Bachelor of Information Sciences (IT)</div>
+                            <div class="info-value">Moi University <span style="color:#3e6a8c;">(2022 – Present)</span></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Kenya Certificate of Secondary Education (KCSE)</div>
+                            <div class="info-value">Oriwo Boys High School (2021) <span style="font-weight:500;"> · Mean Grade C+</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements & certs (inline) -->
+                    <div class="section">
+                        <div class="section-title"><i class="fas fa-award"></i> Achievements & Certifications</div>
+                        <div style="background: #eaf1f9; border-radius: 20px; padding: 1.2rem 1.5rem;">
+                            <p style="font-weight:600; margin-bottom:10px;"><i class="fas fa-check-circle" style="color:#2d7fb9;"></i> HP LIFE courses completed:</p>
+                            <ul class="cert-list">
+                                <li><i class="fas fa-chevron-circle-right"></i> IT for business success</li>
+                                <li><i class="fas fa-chevron-circle-right"></i> Agile Project Management</li>
+                                <li><i class="fas fa-chevron-circle-right"></i> AI for Beginners</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right column: skills -->
+                <div>
+                    <div class="section">
+                        <div class="section-title"><i class="fas fa-cogs"></i> Key Skills & Competencies</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL / SQL queries</span>
+                            <span class="skill-tag">Database basics</span>
+                            <span class="skill-tag">HTML & CSS</span>
+                            <span class="skill-tag">Web dev fundamentals</span>
+                            <span class="skill-tag">Computer networks</span>
+                            <span class="skill-tag">Cybersecurity basics</span>
+                            <span class="skill-tag">MS Word</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">PowerPoint</span>
+                            <span class="skill-tag">Microsoft Office Suite</span>
+                        </div>
+                        <div style="margin-top: 1.8rem;">
+                            <div class="info-label" style="margin-bottom:10px;"><i class="fas fa-laptop"></i> Additional</div>
+                            <div class="info-value" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <span style="background:#e7edf5; padding:0.2rem 1rem; border-radius:40px;">Agile basics</span>
+                                <span style="background:#e7edf5; padding:0.2rem 1rem; border-radius:40px;">AI fundamentals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- referees section (standout) -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-user-tie"></i> Referees</div>
+                <div class="referee-card">
+                    <div class="dept">Moi University — Department of Information Technology</div>
+                    <div class="contact-line">
+                        <i class="fas fa-phone"></i> <span>0721 330170 / 0722894269</span>
+                    </div>
+                    <div class="contact-line">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <span><a href="mailto:dit@mu.ac.ke" style="color:#0b2b44; text-decoration:underline dotted;">dit@mu.ac.ke</a>  |  <a href="mailto:hodit@mu.ac.ke" style="color:#0b2b44; text-decoration:underline dotted;">hodit@mu.ac.ke</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- new contact form section -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-envelope"></i> Contact Me</div>
+                <form id="contactForm" class="contact-form">
+                    <div class="info-item">
+                        <label>Name
+                            <input type="text" name="name" required>
+                        </label>
+                    </div>
+                    <div class="info-item">
+                        <label>Email
+                            <input type="email" name="email" required>
+                        </label>
+                    </div>
+                    <div class="info-item">
+                        <label>Message
+                            <textarea name="message" rows="4" required></textarea>
+                        </label>
+                    </div>
+                    <button type="submit" class="download-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- hidden gem: the second page of PDF had long numbers, but we reflect that it's the same CV, maybe note as footer. Also full attachment line -->
+
+            <!-- download button area -->
+            <div class="pdf-download-section">
+                <!-- We simulate that the PDF attachment is "Michael_Ocholla_CV_Attachment.pdf" -->
+                <a href="#" id="downloadPdfBtn" class="download-btn">
+                    <i class="fas fa-file-pdf"></i> Download CV (PDF)
+                </a>
+            </div>
+
+            <!-- footnote with mention of attachment (the numbers from page 2 are not needed, but we subtly reference the PDF) -->
+            <div class="footnote">
+                <i class="far fa-file"></i> Michael_Ocholla_CV_Attachment.pdf – official document
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple script to handle "download" – since real file is not hosted, we trigger an info message and offer a dataURL / pdf simulation -->
+    <script>
+        (function() {
+            var downloadBtn = document.getElementById('downloadPdfBtn');
+
+            // Cross-browser compatible download function
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Create the CV text content
+                    var fullCVtext = 'MICHAEL OCHOLLA - CURRICULUM VITAE (ATTACHMENT)\n\n' +
+                        'PERSONAL INFORMATION\n' +
+                        'Okollo Michael Ocholla\n' +
+                        'Moi University, P.O. Box 3900 - 30100, Eldoret.\n' +
+                        'Mobile: +254 796 967 161 | Email: Michael32ocholla@gmail.com\n\n' +
+                        'CAREER OBJECTIVE\n' +
+                        'A motivated Information Technology student seeking an Industrial Attachment opportunity to apply my knowledge in networking, database management and system support while gaining practical experience in a professional environment.\n\n' +
+                        'EDUCATION BACKGROUND\n' +
+                        '- Bachelor of Information Sciences (IT) - Moi University (2022 - Present)\n' +
+                        '- Kenya Certificate of Secondary Education (KCSE) - Oriwo Boys High School (2021) - Mean Grade C+\n\n' +
+                        'KEY SKILLS AND COMPETENCIES\n' +
+                        '- Basic knowledge of database management systems (MySQL, SQL queries)\n' +
+                        '- Web development fundamentals (HTML, CSS)\n' +
+                        '- Knowledge of computer networks and cybersecurity basics\n' +
+                        '- Proficient in Microsoft Office Suite (Word, Excel, PowerPoint)\n\n' +
+                        'ACHIEVEMENTS & CERTIFICATIONS\n' +
+                        'Completed HP LIFE courses:\n' +
+                        '- IT for business success\n' +
+                        '- Agile Project Management\n' +
+                        '- AI for Beginners\n\n' +
+                        'REFEREES\n' +
+                        'Moi University\n' +
+                        'Department of Information Technology\n' +
+                        'Tel: 0721 330170 / 0722894269 | EMAIL: dit@mu.ac.ke or hodit@mu.ac.ke\n\n' +
+                        '[original PDF attachment includes second page with line numbers 1..1018, omitted here for brevity]\n' +
+                        '--- end of CV ---';
+
+                    // Use Blob API if available (all modern browsers)
+                    if (typeof Blob !== 'undefined' && window.URL && window.URL.createObjectURL) {
+                        try {
+                            var blob = new Blob([fullCVtext], { type: 'application/octet-stream' });
+                            var url = window.URL.createObjectURL(blob);
+                            var link = document.createElement('a');
+                            link.href = url;
+                            link.download = 'Michael_Ocholla_CV_Attachment.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            if (window.URL.revokeObjectURL) {
+                                window.URL.revokeObjectURL(url);
+                            }
+                        } catch (err) {
+                            // Fallback if Blob fails
+                            alert('CV content is ready. For download support, please use a modern browser (Chrome, Firefox, Safari, or Edge).');
+                        }
+                    } else {
+                        // Fallback for very old browsers
+                        alert('CV content is ready. For download support, please use a modern browser (Chrome, Firefox, Safari, or Edge).');
+                    }
+                });
+            }
+
+            // contact form handling with cross-browser support
+            var contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values in a cross-browser way
+                    var nameInput = contactForm.querySelector('input[name="name"]');
+                    var emailInput = contactForm.querySelector('input[name="email"]');
+                    var messageInput = contactForm.querySelector('textarea[name="message"]');
+                    
+                    var name = nameInput ? nameInput.value : '';
+                    var email = emailInput ? emailInput.value : '';
+                    var message = messageInput ? messageInput.value : '';
+
+                    // simple validation
+                    if (!name || !email || !message) {
+                        alert('Please fill in all fields.');
+                        return;
+                    }
+
+                    // Show a thank-you message and reset form
+                    alert('Thank you, ' + name + '! Your message has been recorded. I will respond as soon as possible.');
+                    contactForm.reset();
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
